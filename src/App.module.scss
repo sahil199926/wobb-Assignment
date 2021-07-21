@@ -1,7 +1,31 @@
 .App {
-  text-align: center;
+  display: flex;
+  padding-left: 70px;
+  margin-top: 13px;
+  padding-right: 70px;
+  justify-content: space-between;
+>:first-child{
+  width: 69%;
+}
+>:nth-child(2){
+  width: 30%;
+}
 }
 
+@media (max-width:600px){
+  .App{
+    display: grid;
+    padding-left: 10px;
+    padding-right: 10px;
+    >:first-child{
+      width: 100%;
+    
+    }
+    >:nth-child(2){
+      width: 100%;
+    }
+  }
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

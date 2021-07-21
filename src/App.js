@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React,{useState} from 'react';
+import styles from './App.module.scss'
+import Main from './Components/MainContainer/Main/Main';
+import NavBar from './Components/NavBar/NavBar';
+import RightPannel from './Components/MainContainer/RightPannel/RightPannel'
 function App() {
+  const [tab,setTab]=useState(0)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    < >
+     <NavBar tab={tab} setTab={setTab}/>
+     <div hidden={tab===0?false:true} className={styles['App']}>
+     <Main/>
+     <RightPannel/>
+     </div>
+     <div hidden={tab===0?true:false} >
+       <img />
+     </div>
+
+    </>
   );
 }
 

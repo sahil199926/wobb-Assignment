@@ -1,0 +1,51 @@
+.back-img{
+    background: url('https://res.cloudinary.com/span/image/upload/v1626870231/wobb/bg_desktop_khnfwi.jpg');
+    width: 100%;
+    height: 235px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: inherit;
+}
+.head-container{
+    border-radius: 10px;
+    >:nth-child(2){
+        height: 100%;
+        width: auto;
+        margin-top: -50px;
+        background: white;
+        padding: 20px;
+        border-radius: 11px;
+       
+        >:first-child{
+            background: white;
+            width: 50px;
+            padding: 16px 32px;
+            border: 1px solid #e6e4e1;
+            margin-top: -87px;
+           
+            >img{
+                height: auto;
+                width: 50px;
+            }
+        }
+        .btns{
+            display: flex;
+            button{
+                display: flex;
+                align-items: center;
+                svg{
+                    margin-right: 7px;
+                    color: blue;
+                }
+                p{
+                    position: absolute;
+                    margin-top: 0px;
+                    text-align: right;
+                    margin-left: 15px;
+                    color: blue
+                }
+                ;
+            }
+        }
+    }
+}
