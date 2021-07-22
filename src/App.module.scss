@@ -1,17 +1,32 @@
 .App {
   display: flex;
   padding-left: 70px;
-  margin-top: 13px;
+  margin-top: 140px;
   padding-right: 70px;
   justify-content: space-between;
 >:first-child{
   width: 69%;
+  margin-right: 10px;
 }
 >:nth-child(2){
   width: 30%;
+  min-width: 240px;
 }
 }
-
+.App-hidden{
+margin:143px 70px;
+>:first-child{
+  text-align:center;
+}
+>:nth-child(2){
+  align-items:center;
+  display:flex;
+  img{
+    margin:auto;
+    width: 468px;
+  }
+}
+}
 @media (max-width:600px){
   .App{
     display: grid;
@@ -25,6 +40,16 @@
       width: 100%;
     }
   }
+  .App-hidden{
+    >:first-child{
+      font-size: 12px;
+    }
+    >:nth-child(2){
+      img{
+        width:200px
+      }
+    }
+}
 }
 .App-logo {
   height: 40vmin;

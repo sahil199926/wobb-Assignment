@@ -40,14 +40,18 @@ function About() {
                     <p>Figma is the first professional-grade online tool created specifically for interface design. Born on the Web, Figma helps the entire team create, test, and ship better, designs, faster.</p>
                     <div>
                         <div>
+                            <div>
                             <p>Website URL</p>
-                            <p>Figma.com</p>
+                            <p style={{color:'#0a65c6'}}>Figma.com</p>
+                            </div>
                         </div>
 
                         <div>
-                            <p>Funding via Crunchbase</p>
+                            <div>
+                            <p style={{opacity: 0.6,fontWeight:'unset'}} >Funding via Crunchbase</p>
                             <p>Series D</p>
-                            <p>US$ 50M</p>
+                            <p style={{color:'#0a65c6'}} >US$ 50M</p>
+                            </div>
 
                         </div>
 

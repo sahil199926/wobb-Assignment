@@ -20,6 +20,7 @@ import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined'
 import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
 import styles from './NavBar.module.scss';
 import CheckSize from '../../Hooks/CheckSize'
+import { useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -45,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
+      marginLeft: '8px',
       width: '60%',
     },
   },
@@ -87,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NavBar({tab,setTab}) {
   const size=CheckSize();
-
+  const [search,setSearch]=useState("")
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -168,7 +169,7 @@ export default function NavBar({tab,setTab}) {
   );
 
   return (
-    <>
+    <div style={{position:"fixed",width:'100%',zIndex: "2",top: '0'}}>
       <div className={styles['Nav-container']}>
         {/* <div className={classes.grow}> */}
         <AppBar position="static">
@@ -180,7 +181,8 @@ export default function NavBar({tab,setTab}) {
               </div>
               <InputBase
                 placeholder="Search…"
-                value={'ss'}
+                value={search}
+                onChange={(e)=>setSearch(e.target.value)}
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput,
@@ -240,6 +242,7 @@ export default function NavBar({tab,setTab}) {
         {renderMobileMenu}
         {renderMenu}
       </div>
+      <div>
       <div className={styles['below-profile']}>
         <p onClick={()=>setTab(0)} style={{fontWeight:tab===0?'600':'unset'}}>
           <HomeOutlinedIcon style={{ position: 'relative' }} />
@@ -261,6 +264,7 @@ export default function NavBar({tab,setTab}) {
           <a href="#">My Profile</a>
         </p>
       </div>
-    </>
+      </div>
+    </div>
   );
 }
